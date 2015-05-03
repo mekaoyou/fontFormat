@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="520"
+					   height="460"
+					   >
+	<fx:Style source="fontFormat.css"/>
+	
+	<fx:Script source="main.as"/>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<mx:Label x="10" y="10" text="字体属性"/>
+	<mx:Label x="20" y="49" text="字体大小：" width="100" height="20"/>
+	<mx:TextInput x="80" y="47" id="size" width="70" maxChars="2" restrict="0-9" text="12" />
+	<mx:Label x="20" y="80" text="字体颜色：" width="100" height="20"/>
+	<mx:TextInput x="80" y="78" id="color" width="70" maxChars="8" text="0xffffff"/>
+	
+	<mx:Label x="10" y="110" text="字体间距：" width="74" height="21"/>
+	<mx:TextInput x="80" y="107" id="letterSpacing" width="67" text="0"/>
+	<mx:Label x="15" y="136" text="行间距："/>
+	<mx:TextInput x="80" y="134" id="leading" width="70" text="0"/>
+	
+	<mx:CheckBox x="20" y="169" label="是否粗体" id="bold"/>
+	<mx:CheckBox x="101" y="169" label="是否斜体" id="italic"/>
+	<mx:CheckBox x="20" y="200" label="是否带下划线" id="underline"/>
+	
+	<mx:CheckBox x="250" y="20" label="是否发光" id="filter" change="filterChange(event)"/>
+	<mx:Label x="250" y="50" text="发光颜色：" width="100" height="20"/>
+	<mx:Label x="250" y="80" text="发光透明度：" width="100" height="20"/>
+	<mx:Label x="250" y="110" text="水平模糊量：" width="100" height="20"/>
+	<mx:Label x="250" y="140" text="垂直模糊量：" width="100" height="20"/>
+	<mx:Label x="250" y="170" text="印记或跨页的强度：" width="150" height="20"/>
+	<mx:TextInput x="320" y="50" width="70" maxChars="8" text="0x1D250E" id="filterColor" enabled="false"/>
+	<mx:TextInput x="320" y="80" width="70" maxChars="5" restrict="0-9|." text="1" id="filterAlpha" enabled="false"/>
+	<mx:TextInput x="320" y="110" width="70" maxChars="5" restrict="0-9|." text="4" id="filterblurX" enabled="false"/>
+	<mx:TextInput x="320" y="140" width="70" maxChars="5" restrict="0-9|." text="4" id="filterblurY" enabled="false"/>
+	<mx:TextInput x="360" y="170" width="70" maxChars="5" restrict="0-9|." text="4.5" id="filterStrength" enabled="false"/>
+	<mx:Label x="390" y="50" text="(例：0x000000)"/>
+	<mx:Label x="390" y="80" text="(0~1浮点)"/>
+	<mx:Label x="390" y="110" text="(0~255浮点)"/>
+	<mx:Label x="390" y="140" text="(0~255浮点)"/>
+	<mx:Label x="430" y="170" text="(0~255浮点)"/>
+	
+	<mx:Label x="300" y="230" text="背景颜色：" />
+	<mx:TextInput x="360" y="230" text="0x345911" width="70" id="bgColor" maxChars="8"/>
+	<mx:Button x="20" y="229" label="预览字体" id="fontPreview" click="previewFont()"/>
+	
+	<s:Label x="20" y="260" width="480" height="150" backgroundColor="0x345911" id="textBg" />
+	<mx:Text x="20" y="258" fontFamily="宋体" textDecoration="none"  fontStyle="normal" fontWeight="normal" color="0xffffff" width="480" 
+			 height="152" fontSize="12" letterSpacing="0" leading="0" textAlign="center" text="天王盖地虎，宝塔镇河妖。风吹鸡蛋壳，人去鸟安乐。沧海月明珠有泪，蓝田日暖玉生烟。" id="fontExp"/>
+	
+</s:WindowedApplication>
